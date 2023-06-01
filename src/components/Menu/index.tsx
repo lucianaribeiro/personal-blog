@@ -1,15 +1,11 @@
 import React from "react";
 import styles from "./styles.module.css";
 import MenuItem from "../menuItem";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 interface IMenuItem {
   path: string;
   title: string;
-}
-
-interface IMenu {
-  useNavigate: ReturnType<typeof useNavigate>;
 }
 
 const menuItems = [
@@ -24,6 +20,7 @@ const Menu = (): React.ReactElement => {
   const handleNavigate = (path: string) => {
     navigate(path);
   };
+
   return (
     <>
       {menuItems.map(({ path, title }: IMenuItem) => (

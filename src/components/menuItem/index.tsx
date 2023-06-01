@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { useNavigationType } from "react-router-dom";
 
 export interface IMenuItemProps {
   path: string;
@@ -17,13 +16,9 @@ const MenuItem: React.FC<IMenuItemProps> = ({
   path,
   title,
   onNavigate,
-}: IMenuItemProps) => {
+}: IMenuItemProps): React.ReactElement => {
   const [status, setStatus] = useState(STATUS.NORMAL);
   const [active, setActive] = useState("");
-
-  useEffect(() => {
-    console.log(status);
-  });
 
   const onMouseEnter = () => {
     setStatus(STATUS.HOVERED);

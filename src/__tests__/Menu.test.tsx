@@ -17,4 +17,18 @@ describe("Menu", () => {
     const title = screen.getByText("Home");
     expect(title).toBeInTheDocument();
   });
+
+  test("should check the header of the screen", () => {
+    const navigate = mockNavigate();
+
+    const handleNavigate = (path: string) => {
+      navigate(path);
+    };
+
+    render(
+      <MenuItem path="/about" title="About" onNavigate={handleNavigate} />
+    );
+    const title = screen.getByText("About");
+    expect(title).toBeInTheDocument();
+  });
 });
