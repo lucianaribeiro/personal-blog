@@ -2,17 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import {
-  BrowserRouter,
-  Route,
-  RouterProvider,
-  Routes,
-  createBrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage/indext";
 import ContactPage from "./pages/ContactPage";
-import Menu from "./components/Menu";
+import Menu from "./components/menu";
 
 // const root = ReactDOM.createRoot(
 //   document.getElementById("root") as HTMLElement

@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import styles from "./styles.module.css";
+import MenuItem from "../menuItem";
 
 interface IMenu {
   path: string;
@@ -12,14 +13,16 @@ const menuItems = [
   { path: "/contact", title: "Contact" },
 ];
 
-const Menu = (): React.ReactElement => (
-  <>
-    {menuItems.map(({ path, title }: IMenu) => (
-      <div key={title}>
-        <Link to={path}>{title}</Link>
-      </div>
-    ))}
-  </>
-);
+const Menu = (): React.ReactElement => {
+  return (
+    <>
+      {menuItems.map(({ path, title }: IMenu) => (
+        <div className={styles.menuWrapper} key={title}>
+          <MenuItem path={path} title={title} />
+        </div>
+      ))}
+    </>
+  );
+};
 
 export default Menu;

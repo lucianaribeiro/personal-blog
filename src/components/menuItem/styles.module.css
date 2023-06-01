@@ -1,0 +1,13 @@
+.normal {
+    color: black;
+    cursor: pointer;
+}
+
+.hovered {
+    color: blue;
+    cursor: pointer;
+}
+
+.menuWrapper {
+    display: flex;
+}
