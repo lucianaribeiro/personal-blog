@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigationType } from "react-router-dom";
 
 export interface IMenuItemProps {
   path: string;
   title: string;
+  onNavigate: (path: string) => void;
 }
 
 const STATUS = {
@@ -15,8 +16,8 @@ const STATUS = {
 const MenuItem: React.FC<IMenuItemProps> = ({
   path,
   title,
+  onNavigate,
 }: IMenuItemProps) => {
-  const navigate = useNavigate();
   const [status, setStatus] = useState(STATUS.NORMAL);
   const [active, setActive] = useState("");
 
@@ -42,7 +43,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({
             return onMouseEnter();
           }}
           onMouseLeave={onMouseLeave}
-          onClick={() => navigate(path)}
+          onClick={() => onNavigate(path)}
         >
           {title}
         </button>
